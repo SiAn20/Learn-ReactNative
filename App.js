@@ -3,9 +3,10 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open sid our app!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.container}> 
+      <StatusBar style="ligth" />
+      <Text>Te amo mi john, cuchurumin</Text>
+      
     </View>
   );
 }
