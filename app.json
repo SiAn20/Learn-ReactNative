@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Learn-ReactNative",
-    "slug": "Learn-ReactNative",
+    "name": "nombre-App",
+    "slug": "nombre-App",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
