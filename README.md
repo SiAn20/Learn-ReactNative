@@ -29,6 +29,24 @@ Instala Node.js, Git, Watchman y Expo CLI o React Native CLI:
 ```bash
 npm install
 ```
+### Opcional para codigo limpio
+Instalar sus respectivas extensiones en VSC.
+Para ejecutar ESLint en tu proyecto Expo, analizar tu código y detectar errores o malas prácticas. Es útil para mantener un código limpio y estandarizado, instalar:
+```bash
+npx expo lint
+```
+Para instalar Prettier y sus configuraciones en tu proyecto y asegurarte de que el código tenga un formato consistente.
+```bash
+npx expo install -- --save -dev prettier eslint-config-prettier eslint-plugin-prettier
+```
+configurar en `.eslintrc.js`:
+```bash
+module.exports = {
+    extends: ["expo", "prettier"],
+    plugins: ["prettier"],
+    rules: {"prettier/prettier": "error",},
+};
+```
 ## Crear nuevo proyecto
 Con Expo (recomendado para principiantes):
 ```bash
