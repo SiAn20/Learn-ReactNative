@@ -82,7 +82,7 @@ cd MyApp
 npm start
 ```
 
-Con expo pero iniciando solo con lo necesario.
+Con expo pero iniciando solo con lo necesario (Usado en este proyecto) usar `npx expo install react-dom@18.3.1 react-native-web@~0.19.13 @expo/metro-runtime@~4.0.1` para web si no se tiene.
 
 ```bash
 npx create-expo-app nombre-App --template blank
@@ -129,3 +129,6 @@ Learn-ReactNative/
 
 - Página oficial de React Native: [reactnative.dev](https://reactnative.dev/)
 - Página oficial de expo: [expo.dev](https://expo.dev/)
+- Proyectos: [DevProjects](https://www.codementor.io/projects/react-native)
+- Componentes:
+  - [gluestack-ui](https://gluestack.io/ui/docs/components/all-components)
