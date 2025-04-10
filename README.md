@@ -45,6 +45,10 @@ Instala Node.js, Git, Watchman y Expo CLI o React Native CLI:
 npm install
 ```
 
+```bash
+npx expo install react-native-safe-area-context
+```
+
 ### Opcional para codigo limpio
 
 Instalar sus respectivas extensiones en VSC.
