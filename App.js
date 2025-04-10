@@ -1,7 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
-import { getLatestImages } from "./lib/nasa";
 import Constants from "expo-constants";
 import { Main } from "./components/Main";
 
