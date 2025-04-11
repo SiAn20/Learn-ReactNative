@@ -3,8 +3,8 @@ import Svg, { Path } from "react-native-svg";
 const LogoNasa = (props) => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
-    width={2500}
-    height={2065}
+    width={50}
+    height={50}
     viewBox="2.375 2.2 285.256 235.6"
     {...props}
   >

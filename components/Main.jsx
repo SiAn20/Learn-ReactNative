@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { FlatList, View, ActivityIndicator } from "react-native";
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
+  ActivityIndicator,
+} from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { getLatestImages } from "../lib/nasa";
 import { AnimatedNasaCard } from "./NasaCard";
@@ -17,8 +23,11 @@ export function Main() {
 
   return (
     <View style={{ paddingTop: insets.top }}>
-      <View style={{ marginBottom: 20 }}>
+      <View
+        style={{ marginBottom: 20, flexDirection: "row", alignItems: "center" }}
+      >
         <LogoNasa />
+        <Text style={styles.nabvar}> Nasa Space</Text>
       </View>
       {images.length === 0 ? (
         <ActivityIndicator color={"#fff"} size={"Large"} />
@@ -34,3 +43,10 @@ export function Main() {
     </View>
   );
 }
+const styles = StyleSheet.create({
+  nabvar: {
+    fontSize: 30,
+    fontWeight: "bold",
+    color: "blue",
+  },
+});
