@@ -48,6 +48,10 @@ npm install
 ```bash
 npx expo install react-native-safe-area-context
 ```
+Para utilizar svg:
+```bash
+npx expo install react-native-svg
+```
 
 ### Opcional para codigo limpio
 
@@ -136,3 +140,4 @@ Learn-ReactNative/
 - Proyectos: [DevProjects](https://www.codementor.io/projects/react-native)
 - Componentes:
   - [gluestack-ui](https://gluestack.io/ui/docs/components/all-components)
+  - Convertir svg a comp: [SVGR](https://react-svgr.com/playground/?native=true)

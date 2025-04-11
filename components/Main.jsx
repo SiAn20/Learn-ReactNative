@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  ScrollView,
-  SafeAreaView,
-} from "react-native";
+import { FlatList, View, ActivityIndicator } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { getLatestImages } from "../lib/nasa";
+import { AnimatedNasaCard } from "./NasaCard";
+import LogoNasa from "./LogoNasa";
 
 export function Main() {
   const [images, setImages] = useState([]);
+  const insets = useSafeAreaInsets();
 
   useEffect(() => {
     getLatestImages().then((data) => {
@@ -19,47 +16,21 @@ export function Main() {
   }, []);
 
   return (
-    <>
-      <SafeAreaView>
-        <ScrollView>
-          {images.map((img) => (
-            <View key={img.nasa_id} style={styles.card}>
-              <Image source={{ uri: img.image }} style={styles.image} />
-              <Text style={styles.title}>{img.title}</Text>
-              <Text style={styles.description}>{img.description}</Text>
-              <Text style={styles.year}>{img.year}</Text>
-            </View>
-          ))}
-        </ScrollView>
-      </SafeAreaView>
-    </>
+    <View style={{ paddingTop: insets.top }}>
+      <View style={{ marginBottom: 20 }}>
+        <LogoNasa />
+      </View>
+      {images.length === 0 ? (
+        <ActivityIndicator color={"#fff"} size={"Large"} />
+      ) : (
+        <FlatList
+          data={images}
+          renderItem={({ item, index }) => (
+            <AnimatedNasaCard img={item} index={index} />
+          )}
+          keyExtractor={(item) => item.id}
+        />
+      )}
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  card: {
-    marginBottom: 45,
-  },
-  image: {
-    width: 150,
-    height: 150,
-    borderRadius: 10,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-    marginBottom: 10,
-    color: "#fff",
-    marginTop: 10,
-  },
-  description: {
-    fontSize: 16,
-    color: "#eee",
-  },
-  year: {
-    fontSize: 16,
-    fontWeight: "bold",
-    color: "green",
-    marginBottom: 10,
-  },
-});
