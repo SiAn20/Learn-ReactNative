@@ -45,12 +45,55 @@ Instala Node.js, Git, Watchman y Expo CLI o React Native CLI:
 npm install
 ```
 
+Para tamaño de pantalla:
+
 ```bash
 npx expo install react-native-safe-area-context
 ```
+
 Para utilizar svg:
+
 ```bash
 npx expo install react-native-svg
+```
+Para navegación con [React navigation:](https://reactnavigation.org/docs/getting-started):
+```bash
+npm install @react-navigation/native
+npx expo install react-native-screens react-native-safe-area-context #si se usa expo
+npm install @react-navigation/native-stack
+npm install @react-navigation/bottom-tabs #navegacion inferior
+```
+
+### Tailwind
+
+```bash
+npx expo install nativewind
+```
+
+```bash
+npm install --save-dev --save-exact tailwindcss@3.3.2
+```
+
+```bash
+npx tailwindcss init
+```
+
+Configurar `taiwind.config.js` agregando en content lo siguiente:
+
+```js
+module.export = {
+  content: [
+    "./App.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+    "./app/**/*.{js,jsx,ts,tsx}",
+  ],
+};
+```
+
+Configurar `babel.config.js` agregando dentro el return lo siguiente:
+
+```js
+plugins: ["nativewind/babel"],
 ```
 
 ### Opcional para codigo limpio
@@ -90,7 +133,7 @@ cd MyApp
 npm start
 ```
 
-Con expo pero iniciando solo con lo necesario (Usado en este proyecto) usar `npx expo install react-dom@18.3.1 react-native-web@~0.19.13 @expo/metro-runtime@~4.0.1` para web si no se tiene.
+Con expo pero iniciando solo con lo necesario (Usado en este proyecto) usar cualquiera de los siguientes:
 
 ```bash
 npx create-expo-app nombre-App --template blank
@@ -98,7 +141,10 @@ cd MyApp
 npm start
 ```
 
-Con React Native CLI (más control, pero más configuración):
+
+`npx expo install react-dom@18.3.1 react-native-web@~0.19.13 @expo/metro-runtime@~4.0.1` para web si no se tiene.
+
+Crear con React Native CLI (más control, pero más configuración):
 
 ```bash
 npx react-native init MyApp

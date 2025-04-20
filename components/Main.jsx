@@ -24,20 +24,24 @@ export function Main() {
   return (
     <View style={{ paddingTop: insets.top }}>
       <View
-        style={{ marginBottom: 20, flexDirection: "row", alignItems: "center" }}
+        style={{ marginBottom: 10, flexDirection: "row", alignItems: "center" }}
       >
         <LogoNasa />
         <Text style={styles.nabvar}> Nasa Space</Text>
       </View>
       {images.length === 0 ? (
-        <ActivityIndicator color={"#fff"} size={"Large"} />
+        <ActivityIndicator
+          color={"#fff"}
+          size={"large"}
+          style={{ alignItems: "center", justifyContent: "center" }}
+        />
       ) : (
         <FlatList
           data={images}
           renderItem={({ item, index }) => (
             <AnimatedNasaCard img={item} index={index} />
           )}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item.nasa_id}
         />
       )}
     </View>

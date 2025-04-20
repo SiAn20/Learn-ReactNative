@@ -29,8 +29,8 @@ Ambas opciones usan el mismo componente, pero el source cambia.
 
 ## 🔄 Comparación: ScrollView vs FlatList
 
-| C                 | Característica                                | `ScrollView`                                     | `FlatList` |
-| ----------------- | --------------------------------------------- | ------------------------------------------------ | ---------- |
+| Característica    | `ScrollView`                                  | `FlatList`                                       |
+| ----------------- | --------------------------------------------- | ------------------------------------------------ |
 | Uso recomendado   | Pocos elementos (contenido estático o corto)  | Listas largas (dinámicas o muchas filas)         |
 | Rendimiento       | Renderiza **todo a la vez** (poca eficiencia) | Renderiza solo lo visible (mejor rendimiento)    |
 | Personalización   | Muy flexible                                  | Necesita props como `keyExtractor`, `renderItem` |
@@ -78,7 +78,7 @@ import Constants from "expo-constants";
 
 ✅ Esta última opción es más confiable en apps multiplataforma.
 
-## 📤 Exportación
+## 📤 Exportación de componentes
 
 Si es el único componente del archivo, usa export default.
 
